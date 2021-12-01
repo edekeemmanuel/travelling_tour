@@ -6,7 +6,7 @@ function Loading()  {
     const {titles} = useState(true);
     const {load, setLoad} = useState(true);
     const {isError, setIsError} = useState(false);
-    const {user, setUser} = useState("default users");
+    const {users, setUsers} = useState("default users");
 
     useEffect(()=>{
         document.title = `Tour (${titles})`
@@ -23,7 +23,7 @@ function Loading()  {
         })
         .then((data) => {
             const { login } = data;
-            setUser(login);
+            setUsers(login);
             setLoad(false);
 
         })
@@ -36,26 +36,47 @@ function Loading()  {
 
   if (load) { return (
           <div className="loading">Loading</div>
-  )} else if (isError) {
-             return (
-             <div>
-             <h1>Error details, cross check again...</h1>
-             </div>
-  )} else{
+  )
+              } else{
   return (
     <div className="section">
       <h2 className="title">
         Our Tours
         <hr className="underline" />
       </h2>
-      <div>
-     <h1>{user}</h1>
-     </div>
-
+{/* 
+      {users!== null && users.map((user) => (
+          <users key={user.id} user={user} deleteUser={deleteUser} />
+        ))} */}
     </div>
   )
     }
 
+//     if (load) {
+//         return (
+            
+//             <div className="loading">
+                
+//                 <h1>Loading...</h1>
+//                 <h2 className="title">
+//                 Our Tours
+//                 <hr className="underline" />
+//                 </h2>
+//             </div>
+//         )
+//     } else if (isError) {
+//         return (
+//             <div>
+//                 <h1>Error details, cross check again...</h1>
+//             </div>
+//         )
+//     } else {
+//         return (
+//             <div>
+//                 <h1>{user}</h1>
+//             </div>
+//         ) 
+// }
 }
 
 export default Loading

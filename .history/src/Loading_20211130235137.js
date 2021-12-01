@@ -3,7 +3,7 @@ import url from "./url"
 
 
 function Loading()  {
-    const {titles} = useState(true);
+    const {titles, setTitles} = useState(true);
     const {load, setLoad} = useState(true);
     const {isError, setIsError} = useState(false);
     const {user, setUser} = useState("default users");
@@ -32,30 +32,25 @@ function Loading()  {
         })
     })
 
-     
-
-  if (load) { return (
-          <div className="loading">Loading</div>
-  )} else if (isError) {
-             return (
-             <div>
-             <h1>Error details, cross check again...</h1>
-             </div>
-  )} else{
-  return (
-    <div className="section">
-      <h2 className="title">
-        Our Tours
-        <hr className="underline" />
-      </h2>
-      <div>
-     <h1>{user}</h1>
-     </div>
-
-    </div>
-  )
-    }
-
+    if (load) {
+        return (
+            <div>
+                <h1>Loading...</h1>
+            </div>
+        )
+    } else if (isError) {
+        return (
+            <div>
+                <h1>Error details, cross check again...</h1>
+            </div>
+        )
+    } else {
+        return (
+            <div>
+                <h1>{user}</h1>
+            </div>
+        ) 
+}
 }
 
 export default Loading

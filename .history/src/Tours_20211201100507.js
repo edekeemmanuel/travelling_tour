@@ -5,11 +5,6 @@ import url from "./url"
 function Tours() {
     const [users, setUsers] = useState([]);
     const [showMore, setshowMore] = useState(false);
-    const deleteTour = (id) => {
-        if (users !== null) {
-          setUsers(users.filter((user) => user.id !== id));
-        }
-      };
 
     const fetchUser = async () => {
         const request = await fetch(url);
@@ -33,19 +28,7 @@ function Tours() {
                         <h4>{name}</h4>
                         <span className="tour-price">{price}</span>
                         </div>
-                        <div>
-                        <p className="tour-info">
-                        {!showMore ? `${info.slice(0, 200)} ...` : info}
-                        <button className="btn" onClick={() => setshowMore(!showMore)}>
-                        {showMore ? "Show Less." : "Show More"}
-                        </button>
-                        </p>
-                        </div>
-                        <footer>
-                        <button className="delete-btn" onClick={() => deleteTour(user.id)}>
-                        Not Interested
-                        </button>
-                        </footer>
+                        {/* <h4 className=".tour-info">{info}</h4> */}
                     </div>
 
                 </li>

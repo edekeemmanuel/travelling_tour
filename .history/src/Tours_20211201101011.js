@@ -5,11 +5,6 @@ import url from "./url"
 function Tours() {
     const [users, setUsers] = useState([]);
     const [showMore, setshowMore] = useState(false);
-    const deleteTour = (id) => {
-        if (users !== null) {
-          setUsers(users.filter((user) => user.id !== id));
-        }
-      };
 
     const fetchUser = async () => {
         const request = await fetch(url);
@@ -41,11 +36,6 @@ function Tours() {
                         </button>
                         </p>
                         </div>
-                        <footer>
-                        <button className="delete-btn" onClick={() => deleteTour(user.id)}>
-                        Not Interested
-                        </button>
-                        </footer>
                     </div>
 
                 </li>

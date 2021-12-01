@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import url from "./url"
+import Tours from './Tours';
 
 
 function Loading()  {
@@ -32,30 +33,45 @@ function Loading()  {
         })
     })
 
-     
+    if (load) return (
+        <div className="loading">
+            <h1>Loading...</h1>
+        </div>
+    )
+    return (
+      <div className="section">
+        <h2 className="title">
+          Our Tours
+          <hr className="underline" />
+        </h2>
+  
+        {tours !== null &&
+          tours.map((tour) => (
+            <Tours key={tour.id} tour={tour} deleteTour={deleteTour} />
+          ))}
+      </div>
+    );
+  }
 
-  if (load) { return (
-          <div className="loading">Loading</div>
-  )} else if (isError) {
-             return (
-             <div>
-             <h1>Error details, cross check again...</h1>
-             </div>
-  )} else{
-  return (
-    <div className="section">
-      <h2 className="title">
-        Our Tours
-        <hr className="underline" />
-      </h2>
-      <div>
-     <h1>{user}</h1>
-     </div>
-
-    </div>
-  )
-    }
-
+    if (load) {
+        return (
+            <div className="loading">
+                <h1>Loading...</h1>
+            </div>
+        )
+    } else if (isError) {
+        return (
+            <div>
+                <h1>Error details, cross check again...</h1>
+            </div>
+        )
+    } else {
+        return (
+            <div>
+                <h1>{user}</h1>
+            </div>
+        ) 
+}
 }
 
 export default Loading

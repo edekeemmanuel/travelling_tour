@@ -163,7 +163,7 @@ main {
   text-align: center;
   margin-bottom: 4rem;
 }
-.title.underline {
+.underline {
   width: 6rem;
   height: 0.25rem;
   background: var(--clr-primary-5);
@@ -192,7 +192,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 0.1rem;
+  margin-bottom: 1.5rem;
 }
 .tour-info h4 {
   margin-bottom: 0;

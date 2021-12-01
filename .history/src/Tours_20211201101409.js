@@ -42,7 +42,7 @@ function Tours() {
                         </p>
                         </div>
                         <footer>
-                        <button className="delete-btn" onClick={() => deleteTour(user.id)}>
+                        <button className="delete-btn" onClick={() => deleteTour(tour.id)}>
                         Not Interested
                         </button>
                         </footer>
