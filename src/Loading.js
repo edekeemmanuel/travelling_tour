@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, {useState, useEffect} from 'react';
 import url from "./url"
 
@@ -57,5 +58,12 @@ function Loading()  {
     }
 
 }
+=======
+import React from "react";
 
-export default Loading
+const Loading = () => {
+  return <div className="loading">Loading...</div>;
+};
+>>>>>>> 509f1047db51c12fc3a9eaa763d9f9da1d52e434
+
+export default Loading;
