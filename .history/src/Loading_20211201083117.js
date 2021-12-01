@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, {useState, useEffect} from 'react';
 import url from "./url"
 
@@ -33,37 +32,25 @@ function Loading()  {
         })
     })
 
-     
-
-  if (load) { return (
-          <div className="loading">Loading</div>
-  )} else if (isError) {
-             return (
-             <div>
-             <h1>Error details, cross check again...</h1>
-             </div>
-  )} else{
-  return (
-    <div className="section">
-      <h2 className="title">
-        Our Tours
-        <hr className="underline" />
-      </h2>
-      <div>
-     <h1>{user}</h1>
-     </div>
-
-    </div>
-  )
-    }
-
+    if (load) {
+        return (
+            <div className="loading">
+                <h1>Loading...</h1>
+            </div>
+        )
+    } else if (isError) {
+        return (
+            <div>
+                <h1>Error details, cross check again...</h1>
+            </div>
+        )
+    } else {
+        return (
+            <div>
+                <h1>{user}</h1>
+            </div>
+        ) 
 }
-=======
-import React from "react";
+}
 
-const Loading = () => {
-  return <div className="loading">Loading...</div>;
-};
->>>>>>> 509f1047db51c12fc3a9eaa763d9f9da1d52e434
-
-export default Loading;
+export default Loading

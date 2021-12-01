@@ -1,13 +1,15 @@
-<<<<<<< HEAD
 import React, {useState, useEffect} from 'react';
 import url from "./url"
+import Tours from './Tours';
 
 
 function Loading()  {
     const {titles} = useState(true);
     const {load, setLoad} = useState(true);
     const {isError, setIsError} = useState(false);
-    const {user, setUser} = useState("default users");
+    //const {user, setUser} = useState("default users");
+    const [ tour ] = useState(true);
+const [tours, setTours] = useState(null);
 
     useEffect(()=>{
         document.title = `Tour (${titles})`
@@ -24,7 +26,7 @@ function Loading()  {
         })
         .then((data) => {
             const { login } = data;
-            setUser(login);
+            setTours(login);
             setLoad(false);
 
         })
@@ -33,37 +35,30 @@ function Loading()  {
         })
     })
 
-     
+    
+const deleteTour = (id) => {
+    if (tours !== null) {
+      setTours(tours.filter((tour) => tour.id !== id));
+    }
+  };
 
-  if (load) { return (
-          <div className="loading">Loading</div>
-  )} else if (isError) {
-             return (
-             <div>
-             <h1>Error details, cross check again...</h1>
-             </div>
-  )} else{
+      if (load) return <Loading />;
   return (
     <div className="section">
       <h2 className="title">
         Our Tours
         <hr className="underline" />
       </h2>
-      <div>
-     <h1>{user}</h1>
-     </div>
 
+      {tours !== null &&
+        tours.map((tour) => (
+          <Tours key={tour.id} tour={tour} deleteTour={deleteTour} />
+        ))}
     </div>
-  )
-    }
-
+  );
 }
-=======
-import React from "react";
 
-const Loading = () => {
-  return <div className="loading">Loading...</div>;
-};
->>>>>>> 509f1047db51c12fc3a9eaa763d9f9da1d52e434
 
-export default Loading;
+
+
+export default Loading
