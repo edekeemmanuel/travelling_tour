@@ -58,8 +58,8 @@ Global Styles
   box-sizing: border-box;
 }
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   background: var(--clr-grey-10);
   color: var(--clr-grey-1);
   line-height: 1.5;
@@ -67,7 +67,6 @@ body {
 }
 ul {
   list-style-type: none;
-  width: 46%;
 }
 a {
   text-decoration: none;
@@ -83,8 +82,6 @@ h4 {
 }
 h1 {
   font-size: 3rem;
-  padding: 20px;
-  margin-top: 20px;
 }
 h2 {
   font-size: 2rem;
@@ -94,40 +91,10 @@ h3 {
 }
 h4 {
   font-size: 0.875rem;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 40px;
 }
-
-.price {
-  background-color: rgb(219, 238, 243);
-  color: rgb(91, 190, 247);
-  padding: 5px;
-  border-radius: var(--radius);
-  font-size: 1.2em;
-}
-
 p {
   margin-bottom: 1.25rem;
   color: var(--clr-grey-5);
-}
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.end {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin-top: 5rem;
-}
-
-.description {
-  margin: 40px;
 }
 @media screen and (min-width: 800px) {
   h1 {
@@ -138,7 +105,6 @@ p {
   }
   h3 {
     font-size: 1.75rem;
-    margin-bottom: 3rem;
   }
   h4 {
     font-size: 1rem;
@@ -153,7 +119,20 @@ p {
     line-height: 1;
   }
 }
+/*  global classes */
 
+/* section */
+.section {
+  width: 90vw;
+  margin: 0 auto;
+  max-width: var(--max-width);
+}
+
+@media screen and (min-width: 992px) {
+  .section {
+    width: 95vw;
+  }
+}
 .btn {
   background: var(--clr-primary-5);
   display: inline-block;
@@ -164,23 +143,9 @@ p {
   letter-spacing: var(--spacing);
   border-color: transparent;
   cursor: pointer;
-  font-size: 1rem;
+  margin-top: 2rem;
+  font-size: 1.2rem;
 }
-/*  global classes */
-
-/* section */
-.section {
-  width: 70vw;
-  margin: 0 auto;
-  max-width: var(--max-width);
-}
-
-@media screen and (min-width: 992px) {
-  .section {
-    width: 95vw;
-  }
-}
-
 /*
 =============== 
 Tours
@@ -200,11 +165,10 @@ main {
 }
 .title.underline {
   width: 6rem;
-  height: 0.35rem;
+  height: 0.25rem;
   background: var(--clr-primary-5);
   margin-left: auto;
   margin-right: auto;
-  margin-top: 0.2em;
 }
 
 .single-tour {
@@ -228,7 +192,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 0.1rem;
+  margin-bottom: 1rem;
 }
 .tour-info h4 {
   margin-bottom: 0;
@@ -251,7 +215,7 @@ main {
 .single-tour footer {
   padding: 1.5rem 2rem;
 }
-.single-tour .button {
+.single-tour .delete-btn {
   display: block;
   width: 200px;
   margin: 1rem auto 0 auto;

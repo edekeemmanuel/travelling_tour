@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-import React from 'react';
-import "./index.css";
-
-const Loading = () => {
-    return (
-        <div>
-            <h1 className="loading">Loading...</h1>;
-        </div>
-    )
-=======
-<<<<<<< HEAD
 import React, {useState, useEffect} from 'react';
 import url from "./url"
 
@@ -44,38 +32,52 @@ function Loading()  {
         })
     })
 
-     
+     const deleteUser = (id) => {
+    if (user !== null) {
+      setUser(user.filter((user) => user.id !== id));
+    }
+  };
 
-  if (load) { return (
-          <div className="loading">Loading</div>
-  )} else if (isError) {
-             return (
-             <div>
-             <h1>Error details, cross check again...</h1>
-             </div>
-  )} else{
+  if (load) return <Loading />;
   return (
     <div className="section">
       <h2 className="title">
         Our Tours
         <hr className="underline" />
       </h2>
-      <div>
-     <h1>{user}</h1>
-     </div>
 
+      {user !== null &&
+        user.slice((user) => (
+          <user key={user.id} user={user} deleteUser={deleteUser} />
+        ))}
     </div>
-  )
-    }
+  ); 
 
->>>>>>> 65b16def2b056b145fa5e706088469e0229fcb4c
+//     if (load) {
+//         return (
+            
+//             <div className="loading">
+                
+//                 <h1>Loading...</h1>
+//                 <h2 className="title">
+//                 Our Tours
+//                 <hr className="underline" />
+//                 </h2>
+//             </div>
+//         )
+//     } else if (isError) {
+//         return (
+//             <div>
+//                 <h1>Error details, cross check again...</h1>
+//             </div>
+//         )
+//     } else {
+//         return (
+//             <div>
+//                 <h1>{user}</h1>
+//             </div>
+//         ) 
+// }
 }
-=======
-import React from "react";
 
-const Loading = () => {
-  return <div className="loading">Loading...</div>;
-};
->>>>>>> 509f1047db51c12fc3a9eaa763d9f9da1d52e434
-
-export default Loading;
+export default Loading

@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-import React from 'react';
-import "./index.css";
-
-const Loading = () => {
-    return (
-        <div>
-            <h1 className="loading">Loading...</h1>;
-        </div>
-    )
-=======
-<<<<<<< HEAD
 import React, {useState, useEffect} from 'react';
 import url from "./url"
 
@@ -68,14 +56,6 @@ function Loading()  {
   )
     }
 
->>>>>>> 65b16def2b056b145fa5e706088469e0229fcb4c
 }
-=======
-import React from "react";
 
-const Loading = () => {
-  return <div className="loading">Loading...</div>;
-};
->>>>>>> 509f1047db51c12fc3a9eaa763d9f9da1d52e434
-
-export default Loading;
+export default Loading
