@@ -281,6 +281,7 @@ main {
   }
 
   .single-tour .button {
-    width: 90px;
+    width: 100px;
+    border-width: 4px;
   }
 }
