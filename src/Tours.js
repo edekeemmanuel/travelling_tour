@@ -31,7 +31,7 @@ const Tours = () => {
 
   if (loading) return <Loading />;
 
-  if (value = 0) return <End/>;
+  if (value <= 0) return <End/>;
 
   return (
       <div className="container">
