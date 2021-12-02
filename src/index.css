@@ -181,6 +181,8 @@ p {
   }
 }
 
+
+
 /*
 =============== 
 Tours
@@ -261,4 +263,24 @@ main {
   border: 1px solid var(--clr-red-dark);
   padding: 0.25rem 0.5rem;
   border-radius: var(--radius);
+}
+
+@media screen and (max-width: 400px) {
+  h4 {
+    font-size: 0.87rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .price {
+    padding: 3px;
+    border-radius: var(--radius);
+    font-size: 1em;
+    margin-top: 1.2rem;
+  }
+
+  .single-tour .button {
+    width: 100px;
+  }
 }
