@@ -281,7 +281,7 @@ main {
   }
 
   .single-tour .button {
-    width: 0px;
-    overflow: inherit;
+    width: 120px;
+   
   }
 }
